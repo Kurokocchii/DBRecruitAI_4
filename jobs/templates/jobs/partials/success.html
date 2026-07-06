@@ -1,0 +1,15 @@
+<div id="apply-flow">
+    <h1>Application Submitted!</h1>
+    <span>{{ application.application_id }}</span>
+    <a
+        href=""
+        class="btn btn-primary">
+        Start Video Interview
+    </a>
+    <a href="{% url 'jobs' %}" class="btn btn-outline-alt" >
+        Browse More Jobs
+    </a>
+    <a href="{% url 'track' %}" class="btn btn-outline-alt">
+        Track Status
+    </a>
+</div>
