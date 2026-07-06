@@ -1,0 +1,30 @@
+{% extends "home.html" %}
+{% load static %}
+{% block body %}
+<div class="bg-container dim"></div>
+<main class="main-content-centered">
+    <div class="content-header text-center">
+        <h1 class="page-title">Track Application</h1>
+        <p class="page-subtitle">
+            Enter your unique application ID to see your current status.
+        </p>
+    </div>
+    <div class="track-container glass-white">
+        <div class="back-button-container">
+            <a href="{% url 'home' %}" class="btn btn-outline-alt">
+                <i class="fas fa-arrow-left"></i> Back
+            </a>
+        </div>
+            <form class="search-box" hx-get="{% url 'track_application' %}"
+                hx-target="#track-result-container" hx-swap="innerHTML" >
+                <input
+                    type="text"
+                    name="application_id"
+                    placeholder="Enter Application ID">
+                <button type="submit"  class="btn btn-primary btn-track" >
+                    Track Status
+                </button>
+            </form>
+    <div id="track-result-container"></div>
+</main>
+{% endblock %}
